@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Badminton Match History</title>
+    <link href="https://fonts.googleapis.com/css2?family=Exo:wght@600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Exo', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        #logoBox {
+            width: 180px; 
+            height: 60px;
+            background-color: #D9D9D9; /* Or replace with your logo image */
+        }
+
+        nav {
+            display: flex;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 15px; 
+            border-radius: 5px; 
+            transition: background-color 0.3s ease; 
+        }
+        
+        nav a:hover {
+            background-color: #D1AC00; 
+        }
+
+        .header-line {
+            width: 80%;
+            height: 2px;
+            background-color: #333;
+            margin: 20px auto;
+        }
+
+        .match-details {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .match-details h2 {
+            margin: 20px 0;
+            color: #333;
+        }
+
+        .stats-table {
+            width: 90%; 
+            margin: 20px auto;
+            border-collapse: collapse;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .stats-table, .stats-table th, .stats-table td {
+            border: 1px solid #ddd;
+        }
+
+        .stats-table th, .stats-table td {
+            padding: 12px 15px;
+            text-align: center;
+        }
+
+        .stats-table th {
+            background-color: #333;
+            color: #fff;
+            text-transform: uppercase;
+        }
+
+        .stats-table tr {
+            background-color: #fff;
+            transition: background-color 0.3s ease;
+        }
+
+        .stats-table tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        .btn-container {
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #fff;
+            background-color: #333;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #555;
+        }
+
+        .action-buttons button {
+            margin: 5px;
+            padding: 8px 12px;
+            font-size: 14px;
+            color: #fff;
+            background-color: #004643;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .action-buttons button:hover {
+            background-color: #006b5e;
+        }
+
+        .action-buttons form {
+            display: inline;
+        }
+
+        header {
+            background-color: #004643;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        nav {
+            display: flex;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        
+        nav a:hover {
+            background-color: #D1AC00;
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 500px;
+            border-radius: 10px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .modal-body input {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .modal-footer {
+            display: flex;
+            justify-content: flex-end;
+            padding-top: 10px;
+            border-top: 1px solid #ddd;
+        }
+
+        .modal-footer button {
+            padding: 10px 20px;
+            margin-left: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .modal-footer .btn-save {
+            background-color: #333;
+            color: #fff;
+        }
+
+        .modal-footer .btn-cancel {
+            background-color: #aaa;
+            color: #fff;
+        }
+
+        .modal-footer .btn-save:hover {
+            background-color: #555;
+        }
+
+        .modal-footer .btn-cancel:hover {
+            background-color: #888;
+        }
+
+    </style>
+</head>
+
+<body>
+  <header>
+        <nav>
+            <a href="/homepage">Beranda</a>
+            <a href="/category">Kategori</a>
+        </nav>
+    </header>
+
+    <div class="match-details">
+        <h2>Riwayat Pertandingan Badminton</h2>
+        <table class="stats-table">
+            <tr>
+                <th>Nama</th>
+                <th>Tipe</th>
+                <th>Tim A</th>
+                <th>Tim B</th>
+                <th>Skor Tim A</th>
+                <th>Skor Tim B</th>
+                <th>Set 1</th>
+                <th>Set 2</th>
+                <th>Set 3</th>
+                <th>Aksi</th>
+            </tr>
+
+            <% matches.forEach(match => { %>
+                <tr>
+                    <td><%= match.name %></td>
+                    <td><%= match.type %></td>
+                    <td><%= match.team_a %></td>
+                    <td><%= match.team_b %></td>
+                    <td><%= match.team_1_set_win %></td>
+                    <td><%= match.team_2_set_win %></td>
+                    <td>
+                        <%= match.set1_team1_score %> - <%= match.set1_team2_score %>
+                    </td>
+                    <td>
+                        <%= match.set2_team1_score %> - <%= match.set2_team2_score %>
+                    </td>
+                    <td>
+                        <%= match.set3_team1_score %> - <%= match.set3_team2_score %>
+                    </td>
+                    <td class="action-buttons">
+                        <button onclick="openEditModal('<%= match.id %>', '<%= match.name %>', '<%= match.type %>', '<%= match.team_a %>', '<%= match.team_b %>', '<%= match.team_1_set_win %>', '<%= match.team_2_set_win %>', '<%= match.set1_team1_score %>', '<%= match.set1_team2_score %>', '<%= match.set2_team1_score %>', '<%= match.set2_team2_score %>', '<%= match.set3_team1_score %>', '<%= match.set3_team2_score %>')">Edit</button>
+                        <form action="/delete_match_badmin/<%= match.id %>" method="post">
+                            <button type="submit">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+            <% }); %>
+        </table>
+    </div>
+
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Edit Match</h2>
+                <span class="close" onclick="closeEditModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form id="editForm" action="/update_match_badmin" method="post">
+                    <input type="hidden" id="editId" name="id">
+                    <label for="editName">Nama:</label>
+                    <input type="text" id="editName" name="name">
+                    <label for="editType">Tipe:</label>
+                    <input type="text" id="editType" name="type">
+                    <label for="editTeamA">Tim A:</label>
+                    <input type="text" id="editTeamA" name="team_a">
+                    <label for="editTeamB">Tim B:</label>
+                    <input type="text" id="editTeamB" name="team_b">
+                    <label for="editTeam1SetWin">Skor Tim A:</label>
+                    <input type="text" id="editTeam1SetWin" name="team_1_set_win">
+                    <label for="editTeam2SetWin">Skor Tim B:</label>
+                    <input type="text" id="editTeam2SetWin" name="team_2_set_win">
+                    <label for="editSet1Team1Score">Set 1 Tim A:</label>
+                    <input type="text" id="editSet1Team1Score" name="set1_team1_score">
+                    <label for="editSet1Team2Score">Set 1 Tim B:</label>
+                    <input type="text" id="editSet1Team2Score" name="set1_team2_score">
+                    <label for="editSet2Team1Score">Set 2 Tim A:</label>
+                    <input type="text" id="editSet2Team1Score" name="set2_team1_score">
+                    <label for="editSet2Team2Score">Set 2 Tim B:</label>
+                    <input type="text" id="editSet2Team2Score" name="set2_team2_score">
+                    <label for="editSet3Team1Score">Set 3 Tim A:</label>
+                    <input type="text" id="editSet3Team1Score" name="set3_team1_score">
+                    <label for="editSet3Team2Score">Set 3 Tim B:</label>
+                    <input type="text" id="editSet3Team2Score" name="set3_team2_score">
+                    <div class="modal-footer">
+                        <button type="button" class="btn-cancel" onclick="closeEditModal()">Cancel</button>
+                        <button type="submit" class="btn-save">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openEditModal(id, name, type, teamA, teamB, team1SetWin, team2SetWin, set1Team1Score, set1Team2Score, set2Team1Score, set2Team2Score, set3Team1Score, set3Team2Score) {
+            document.getElementById('editId').value = id;
+            document.getElementById('editName').value = name;
+            document.getElementById('editType').value = type;
+            document.getElementById('editTeamA').value = teamA;
+            document.getElementById('editTeamB').value = teamB;
+            document.getElementById('editTeam1SetWin').value = team1SetWin;
+            document.getElementById('editTeam2SetWin').value = team2SetWin;
+            document.getElementById('editSet1Team1Score').value = set1Team1Score;
+            document.getElementById('editSet1Team2Score').value = set1Team2Score;
+            document.getElementById('editSet2Team1Score').value = set2Team1Score;
+            document.getElementById('editSet2Team2Score').value = set2Team2Score;
+            document.getElementById('editSet3Team1Score').value = set3Team1Score;
+            document.getElementById('editSet3Team2Score').value = set3Team2Score;
+            document.getElementById('editModal').style.display = "flex";
+        }
+
+        function closeEditModal() {
+            document.getElementById('editModal').style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == document.getElementById('editModal')) {
+                closeEditModal();
+            }
+        }
+    </script>
+</body>
+
+</html>

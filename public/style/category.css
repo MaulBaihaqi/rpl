@@ -1,0 +1,241 @@
+
+body {
+  font-family: "Exo", sans-serif;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+header {
+  background-color: #004643;
+  color: white;
+  padding: 10px 20px; 
+  display: flex;
+  align-items: center; 
+  justify-content: space-between; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#logoBox {
+  width: 180px; 
+  height: 60px;
+  background-color: #D9D9D9; /* Or replace with your logo image */
+}
+
+nav {
+  display: flex;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 8px 15px; 
+  border-radius: 5px; 
+  transition: background-color 0.3s ease; 
+}
+
+nav a:hover {
+  background-color: #D1AC00; 
+}
+
+/* ... (Your existing styles) ... */
+
+.cat-egory {
+  position: absolute;
+  bottom: 75%;
+  text-align: center; /* Center the text */
+  width: 100%;      /* Make it take up the full width */
+}
+
+.cat-egory span {
+  font-family: 'Exo', sans-serif;
+  font-size: 48px;   /* Increase font size */
+  font-weight: bold; /* Make it bold */
+  color: #0C1618;
+  letter-spacing: 2px; /* Increase letter spacing for emphasis */
+  margin-bottom: 20px; /* Add space below */
+}
+
+
+.boxes {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.box:first-child {
+  margin-left: 230px;
+}
+
+.box:nth-child(-n+3) {
+  float: left;
+  width: calc(33.33% - 150px);
+  margin-top: 150px;
+  margin-right: 30px;
+  box-sizing: border-box;
+  padding: 20px;
+  border: 1px solid #ccc;
+  text-align: center;
+  height: 100px;
+  border-radius: 15px;
+}
+
+.box:nth-child(4),
+.box:nth-child(5) {
+  float: left;
+  width: calc(33.33% - 150px);
+  margin-right: 30px;
+  margin-top: 20px;
+  box-sizing: border-box;
+  padding: 20px;
+  border: 1px solid #ccc;
+  text-align: center;
+  height: 100px;
+  border-radius: 15px;
+}
+
+.box:nth-child(1) {
+  background-color: #D1AC00;
+}
+
+.box:nth-child(2) {
+  background-color: #004643;
+  color: white;
+}
+
+.box:nth-child(3) {
+  background-color: #D1AC00;
+}
+
+.box:nth-child(4) {
+  margin-left: 230px;
+  float: left;
+  background-color: #004643;
+  color: white;
+}
+
+.box:nth-child(5) {
+  float: left;
+  background-color: #D1AC00;
+}
+
+.box:nth-child(2) .category span,
+.box:nth-child(4) .category span {
+  color: white;
+}
+
+.box:nth-child(2) .category i,
+.box:nth-child(4) .category i {
+  color: white;
+}
+
+.box {
+  transition: transform 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.box:hover {
+  transform: scale(0.95);
+}
+
+.category {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-family: "Exo", sans-serif;
+  position: relative;
+  z-index: 2;
+  text-decoration: none;
+}
+
+.category span {
+  font-weight: 800;
+  font-size: 28px;
+  margin-left: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cat-egory span { /* or use a more specific selector if needed */
+  text-decoration: none;
+}
+
+.category i {
+  font-size: 60px;
+  color: #333;
+  margin-right: 10px;
+}
+
+.category img {
+  width: 60px;
+  height: auto;
+}
+
+.box:nth-child(2) .category img,
+.box:nth-child(4) .category img {
+  filter: brightness(0) invert(1);
+}
+
+.box:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+}
+
+.box[data-bg]:before {
+  background-image: attr(data-bg url);
+}
+
+.boxes {
+  width: 100%;
+  margin-top: 20px; 
+  overflow: hidden; /* Add this to contain the floated boxes */
+}
+
+.soon-to-add {
+  text-align: center;
+  margin-top: 50px; /* Adjusted for better spacing */
+}
+
+.soon-text {
+  font-size: 24px;
+  font-weight: 600;
+  color: #004643;
+  margin-bottom: 20px; /* Increased for more space */
+}
+
+.sport-icons {
+  display: inline-flex;  /* Changed to inline-flex for horizontal layout */
+  align-items: flex-end; /* Aligns icons to the bottom */
+}
+
+.sport-icon {
+  font-size: 36px; /* Increased size */
+  margin: 0 10px;  /* Added margin for spacing */
+  color: #000000; 
+  animation: bounceDown 1.5s infinite ease-in-out;
+}
+
+.sport-icon:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+.sport-icon:nth-child(3) {
+  animation-delay: 1s;
+}
+
+@keyframes bounceDown {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(15px); } /* Increased downward movement */
+  100% { transform: translateY(0); }
+}

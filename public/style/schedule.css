@@ -1,0 +1,112 @@
+/* General Styles */
+body {
+  font-family: "Exo", sans-serif;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+header {
+  background-color: #004643;
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav {
+  display: flex;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+  background-color: #D1AC00;
+}
+
+/* Futsal Schedule Styles */
+.sports-schedule {
+  max-width: 900px; /* Limit the width for better readability */
+  margin: 30px auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+  color: #004643;
+  margin-bottom: 20px;
+}
+
+.date-info {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 18px;
+  color: #898989;
+}
+
+
+.match-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive columns */
+  gap: 20px;
+}
+
+.match {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.match-time {
+  font-size: 18px;
+  color: white;
+  background-color: #D1AC00;
+  padding: 8px 15px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.match-teams {
+  display: flex;
+  justify-content: space-around; /* Evenly space the teams */
+  align-items: center;
+}
+
+.vs {
+  font-size: 24px;
+  margin: 0 15px;
+}
+
+/* Detail Button Styles */
+.detail-button {
+  font-family: "Exo", sans-serif;
+  display: block; 
+  width: 100%;   
+  padding: 10px 15px;
+  background-color: #004643;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px; 
+  transition: background-color 0.3s ease; 
+}
+
+.detail-button:hover {
+  background-color: #D1AC00; 
+}

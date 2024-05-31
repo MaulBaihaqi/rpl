@@ -1,0 +1,320 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: "Giga Sans", sans-serif;
+}
+
+.container {
+  position: relative;
+  margin-top: 50px;
+}
+
+#logoBox {
+  position: absolute;
+  width: 180px;
+  height: 60px;
+  background-color: #D9D9D9;
+  left: 50px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.Beranda {
+  position: absolute;
+  top: 60%;
+  left: 54%;
+  transform: translate(-70%, -50%);
+  display: flex;
+  justify-content: space-between;
+  width: 200px;
+  font-family: 'Exo', sans-serif;
+  cursor: pointer;
+  color: #0C1618;
+  font-size: 16px;
+  margin-right: 20px;
+}
+
+.Kategori {
+  position: absolute;
+  top: 60%;
+  left: 55%;
+  transform: translate(-10%, -50%);
+  display: flex;
+  justify-content: space-between;
+  width: 200px;
+  font-family: 'Exo', sans-serif;
+  cursor: pointer;
+  color: #0C1618;
+  font-size: 16px;
+}
+
+.login-text {
+  position: absolute;
+  top: 50%;
+  right: 40px;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.login-text span {
+  color: #0C1618;
+  font-size: 16px;
+  margin-right: 20px;
+}
+
+.Beranda,
+.Kategori,
+.login-text {
+    font-family: 'Exo', sans-serif;
+    cursor: pointer;
+    color: #0C1618;
+    font-size: 16px;
+    font-weight: bold;
+    margin-right: 20px;
+}
+
+.header-line {
+  position: absolute;
+  left: 0;
+  top: calc(100% + 40px);
+  width: 100%;
+  height: 2px;
+  background-color: #004643;
+}
+
+a {
+  text-decoration: none;
+  color: #0C1618;
+  font-weight: 600;
+}
+
+a span {
+  font-family: 'Exo', sans-serif;
+  font-size: 16px;
+} 
+  
+.welcome-text {
+  position: absolute;
+  top: calc(100% + 70px);
+  left: 15%;
+}
+
+.welcome-text span {
+  font-family: 'Giga Sans', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #0C1618;
+}
+  
+.schedule-feature {
+  position: absolute;
+  top: calc(100% + 120px);
+  left: 190px;
+  width: calc(100%);
+  max-width: 980px;
+  height: 400px;
+  padding: 20px;
+  background-color: #FAF4D5;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+.feature-title {
+  font-family: 'Giga Sans', sans-serif;
+  font-size: 22px;
+  font-weight: bold;
+  color: #0C1618;
+  margin-bottom: 10px;
+}
+
+.inner-boxes {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.inner-box {
+  width: calc(48%);
+  height: 150px;
+  margin-right: 16px;
+  margin-bottom: 15px;
+  background-color: #FFFFFF;
+  border: 1px solid #CCCCCC;
+  border-radius: 5px;
+  position: relative;
+}
+
+.box-content {
+  position: relative;
+  padding: 10px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.sport-info {
+  display: flex;
+  align-items: center;
+}
+
+.sport-title {
+  font-weight: bold;
+  font-size: 16px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.icon-description {
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.icon {
+  margin-right: 50px;
+  font-size: 14px;
+}
+
+.icon i {
+  margin-top: 10px;
+  margin-left: 20px;
+  font-size: 78px;
+}
+
+.description {
+  font-family: 'Giga Sans', sans-serif; /* Atur font menjadi Giga Sans */
+  flex-grow: 1;
+  margin-left: -20px; /* Sesuaikan nilai ini untuk menggeser ke kiri */
+  margin-top: 10px;
+  font-size: 14px; /* Ubah ukuran font deskripsi */
+  display: flex;
+  flex-direction: column; /* Menjadikan elemen-elemen child berbaris vertikal */
+}
+
+.description-row {
+  display: flex;
+  margin: 5px 0;
+  font-size: 16px;
+}
+
+.description-label {
+  font-family: 'Giga Sans', sans-serif; /* Atur font menjadi Giga Sans */
+  font-weight: bold;
+  margin-right: -10px;
+  width: 80px; /* Sesuaikan lebar sesuai kebutuhan */
+}
+
+.description-value {
+  font-family: 'Giga Sans', sans-serif; /* Atur font menjadi Giga Sans */ 
+  flex-grow: 1;
+}
+
+.additional-feature {
+  position: absolute;
+  top: calc(100% + 570px);
+  left: 190px;
+  width: calc(100% - 30px);
+  max-width: 900px;
+  padding: 20px;
+  background-color: #FFFFFF;
+  border-radius: 10px;
+  z-index: 1;
+}
+
+.kategori-title {
+  font-family: 'Giga Sans', sans-serif;
+  font-size: 22px;
+  font-weight: bold;
+  color: #0C1618;
+  margin-bottom: 10px;
+  margin-left: 40px;
+}
+
+.extra-boxes {
+  display: flex;
+  justify-content: flex-end; /* Geser extra-box ke kanan */
+  margin-top: 30px;
+}
+
+.extra-box {
+  width: calc(33.33% - 30px); /* Sesuaikan dengan jumlah extra-box dan gap */
+  height: 100px;
+  background-color: #FFFFFF;
+  border: 1px solid #CCCCCC;
+  border-radius: 5px;
+  display: flex; /* Menggunakan flexbox */
+  justify-content: center; /* Pusatkan konten secara horizontal */
+  align-items: center; /* Pusatkan konten secara vertikal */
+  text-align: center; /* Pusatkan teks secara horizontal */
+  position: relative;
+  z-index: 2;
+  margin-left: 10px; /* Tambahkan margin kiri untuk gap */ 
+  overflow: hidden; /* Atur overflow menjadi hidden */
+}
+
+.category {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Exo', sans-serif;
+}
+
+.category span {
+  font-weight: 800;
+  font-size: 28px;
+  margin-left: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.category i {
+  font-size: 64px; /* Atur ukuran ikon */
+  color: #333;
+  margin-right: 10px;
+}
+
+.category img {
+  width: 60px;
+  height: auto;
+}
+
+.extra-box::before {
+  content: ''; /* Tambahkan konten pseudo-elemen */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* Gunakan lebar dan tinggi 100% */
+  height: 100%;
+  background-size: contain; /* Atur ukuran gambar agar sesuai */
+  background-repeat: no-repeat; /* Atur pengulangan gambar menjadi tidak ada */
+  background-position: center; /* Pusatkan gambar */
+  z-index: -1; /* Posisikan di belakang konten utama */
+}
+
+.extra-box:hover {
+  transform: scale(0.95);
+}
+
+.extra-box[data-bg]::before {
+  background-image: var(--bg-url); /* Ubah properti background-image */
+}
+
+.view-more {
+  text-align: right;
+  margin-top: 20px;
+}
+
+.view-more a {
+  font-family: 'Exo', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  color: #0C8BE7;
+  text-decoration: none;
+}
+
+.view-more a:hover {
+  text-decoration: underline;
+}

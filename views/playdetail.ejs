@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Futsal Match Details</title>
+    <link href="https://fonts.googleapis.com/css2?family=Exo:wght@600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Exo', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        #logoBox {
+            width: 180px; 
+            height: 60px;
+            background-color: #D9D9D9; /* Or replace with your logo image */
+        }
+
+        nav {
+            display: flex;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 15px; 
+            border-radius: 5px; 
+            transition: background-color 0.3s ease; 
+        }
+        
+        nav a:hover {
+            background-color: #D1AC00; 
+        }
+
+        .header-line {
+            width: 80%;
+            height: 2px;
+            background-color: #333;
+            margin: 20px auto;
+        }
+
+        .match-details {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .match-details h2 {
+            margin: 20px 0;
+            color: #333;
+        }
+
+        .teams {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+        }
+
+        .team {
+            flex: 1;
+            padding: 10px;
+        }
+
+        .team img {
+            width: 100px;
+            height: 100px;
+        }
+
+        .stats-table {
+            width: 90%; 
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+
+        .stats-table, .stats-table th, .stats-table td {
+            border: 1px solid #333;
+        }
+
+        .stats-table th, .stats-table td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        .stats-table th {
+            background-color: #333;
+            color: #fff;
+        }
+
+        .player-stats th { /* Style for player stats table header */
+            background-color: #4CAF50; 
+        }
+
+        .btn-container {
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #fff;
+            background-color: #333;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #555;
+        }
+
+        
+/* ... (Your existing general styles) ... */
+
+header {
+  background-color: #004643;
+  color: white;
+  padding: 10px 20px; /* Adjust padding for spacing */
+  display: flex;
+  align-items: center; /* Align items vertically */
+  justify-content: space-between; /* Distribute space between logo and nav */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+nav {
+  display: flex;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 8px 15px; /* Adjusted link padding */
+  border-radius: 5px; /* Rounded corners */
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+nav a:hover {
+  background-color: #D1AC00; /* Gold hover background */
+}
+
+    </style>
+</head>
+
+<body>
+  <header>
+        <nav>
+            <a href="homepage.html">Beranda</a>
+            <a href="category.html">Kategori</a>
+            <a href="login.html">Login</a>
+        </nav>
+    </div>
+</header>
+
+    <div class="match-details">
+        <h2>Detail Pertandingan Futsal</h2>
+        <div class="teams">
+            <div class="team">
+                <img src="path/to/team1_logo.png" alt="Team 1 Logo"> 
+                <h3>Team 1</h3>
+            </div>
+            <div class="team">
+                <img src="path/to/team2_logo.png" alt="Team 2 Logo"> 
+                <h3>Team 2</h3>
+            </div>
+        </div>
+
+        <table class="stats-table">
+            <tr>
+                <th>Statistik</th>
+                <th>Team 1</th>
+                <th>Team 2</th>
+            </tr>
+            <tr>
+                <td>Gol</td>
+                <td>4</td> 
+                <td>3</td> 
+            </tr>            
+            <tr>
+                <td>Fouls</td>
+                <td>5</td> 
+                <td>6</td> 
+            </tr>
+        </table>
+
+        <h2>Statistik Pemain</h2>
+        <h3>Team 1</h3>
+        <table class="stats-table player-stats">
+            <tr>
+                <th>Nama</th>
+                <th>Nomor</th>
+                <th>Gol</th>
+                <th>Assists</th>
+                <th>Fouls</th>
+            </tr>
+            <tr><td>Player 1</td> <td>10</td> <td>2</td> <td>0</td> <td>1</td></tr>
+            <tr><td>Player 2</td> <td>7</td> <td>0</td> <td>1</td> <td>2</td></tr>
+            <tr><td>Player 3</td> <td>5</td> <td>1</td> <td>1</td> <td>0</td></tr>
+            <tr><td>Player 4</td> <td>9</td> <td>1</td> <td>0</td> <td>1</td></tr>
+            <tr><td>Player 5</td> <td>1</td> <td>0</td> <td>0</td> <td>1</td></tr>
+        </table>
+
+        <h3>Team 2</h3>
+        <table class="stats-table player-stats"> 
+            <tr>
+                <th>Nama</th>
+                <th>Nomor</th>
+                <th>Gol</th>
+                <th>Assists</th>
+                <th>Fouls</th>
+            </tr>
+            <tr><td>Player 6</td> <td>12</td> <td>1</td> <td>0</td> <td>1</td></tr>
+            <tr><td>Player 7</td> <td>8</td> <td>1</td> <td>1</td> <td>2</td></tr>
+            <tr><td>Player 8</td> <td>4</td> <td>1</td> <td>1</td> <td>1</td></tr>
+            <tr><td>Player 9</td> <td>2</td> <td>0</td> <td>0</td> <td>1</td></tr>
+            <tr><td>Player 10</td> <td>11</td> <td>0</td> <td>0</td> <td>0</td></tr> 
+        </table>
+
+        <div class="btn-container">
+            <a href="/homepage" class="btn">Back to Home</a> 
+        </div>
+    </div>
+
+    <script>
+        // (Your JavaScript code for fetching and populating data dynamically)
+    </script>
+</body>
+</html>

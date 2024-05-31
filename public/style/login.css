@@ -1,0 +1,279 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: "Giga Sans", sans-serif;
+    background-color: #f0f0f0;
+}
+
+#container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100%;
+    padding-top: 20px;
+}
+
+#outerRectangle {
+    position: relative;
+    width: 1200px;
+    height: 70px;
+    background-color: #0C1618;
+    border-radius: 20px;
+}
+
+#logoBox {
+    position: absolute;
+    width: 120px;
+    height: 40px;
+    background-color: #D9D9D9;
+    left: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#rightBigBox {
+    position: absolute;
+    top: 150px;
+    right: 100px;
+    width: 500px;
+    max-width: 90%;
+    height: 500px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+}
+
+#textBox {
+    position: relative;
+    padding: 40px;
+    background-color: transparent;
+    border-radius: 20px;
+    top: 20px;
+}
+
+#textBox h2 {
+    margin: 0;
+    font-size: 40px;
+    color: #000000;
+    font-family: "Giga Sans", sans-serif;
+}
+
+#textBox p {
+    margin: 5px 0;
+    font-size: 24px;
+    color: #748487;
+    font-family: "Exo Light", sans-serif;
+}
+
+#inputBoxes {
+    margin-top: -10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 40px;
+}
+
+#inputBoxes .input-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+#inputBoxes label {
+    margin-bottom: 5px;
+    font-size: 16px;
+    color: #000;
+    font-family: Arial, sans-serif;
+}
+
+#inputBoxes input {
+    height: 40px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    text-align: left;
+    outline: none;
+    width: 100%;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+#inputBoxes input::placeholder {
+    color: #999;
+    opacity: 1;
+}
+
+#inputBoxes input:focus {
+    border: 2px solid #007bff;
+}
+
+#loginButton {
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#loginButton button {
+    background: linear-gradient(135deg, #004643, #007bff);
+    border: none;
+    color: #FAF4D5;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s, transform 0.2s;
+    font-weight: bold;
+    font-family: "Giga Sans", sans-serif;
+    width: 300px;
+    height: 50px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#loginButton button:hover {
+    background: linear-gradient(135deg, #007bff, #004643);
+    color: #ffffff;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+#loginButton button:active {
+    transform: scale(0.98);
+}
+
+#loginButton button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
+}
+
+.button-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.or {
+    font-family: "Giga Sans", sans-serif;
+    color: #748487;
+    font-size: 14px;
+    margin: 0 5px;
+}
+
+.register {
+    font-family: "Giga Sans", sans-serif;
+    color: #004643;
+    font-size: 14px;
+    text-decoration: none;
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+.register:hover {
+    text-decoration: underline;
+}
+
+/* General Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: "Giga Sans", sans-serif;
+}
+
+/* Login Page Styles */
+.login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0; /* Soft gray background */
+}
+
+.background-shape {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #0C1618, #2C5259); /* Gradient background */
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%); /* Angled shape */
+    z-index: -1; /* Place behind the content */
+}
+
+.login-container {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 15px; /* More rounded corners */
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3); /* Softened shadow */
+    text-align: center;
+    width: 450px;
+}
+
+.logo { /* Logo Styling */
+    width: 120px;
+    height: 50px;
+    margin: 0 auto 20px;  /* Center the logo and add spacing */
+    background-color: #D9D9D9; /* Placeholder for your logo */
+    border-radius: 10px;  
+}
+.logo img{
+    width: 100%;
+}
+
+
+/* Form Styling */
+.form-container h2 {
+    margin-top: 0;
+    font-size: 32px;
+    color: #0C1618;
+}
+
+.form-container p {
+    margin: 10px 0 20px;
+    font-size: 18px; 
+    color: #748487;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group input {
+    width: calc(100% - 22px);
+    height: 45px;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    transition: border-color 0.3s ease;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+
+.input-group input:focus {
+    border-color: #007bff;
+}
+
+.form-container button { /* Button Styling */
+    background: linear-gradient(135deg, #004643, #007bff);
+    color: #fff;
+    padding: 14px 35px;
+    border: none;
+    border-radius: 25px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.form-container button:hover {
+    background: linear-gradient(135deg, #007bff, #004643);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+}
+
+/* Other styles... (button-row, .or, .register remain the same) */
