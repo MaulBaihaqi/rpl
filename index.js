@@ -3,11 +3,11 @@ const bcrypt = require('bcrypt');
 const { Pool } = require('pg');
 
 const pool = new Pool({
-    user: 'postgres',
-    password: '30012004@Ok',
-    host: 'localhost',
-    port: 5432,
-    database: 'stat',
+    user: 'db_user',
+    password: 'pw_user',
+    host: 'host_db',
+    port: your_port,
+    database: 'nama_db',
 });
 
 const app = express();
