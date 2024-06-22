@@ -1,320 +1,294 @@
-body, html {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  font-family: "Giga Sans", sans-serif;
-}
-
-.container {
-  position: relative;
-  margin-top: 50px;
-}
-
-#logoBox {
-  position: absolute;
-  width: 180px;
-  height: 60px;
-  background-color: #D9D9D9;
-  left: 50px;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.Beranda {
-  position: absolute;
-  top: 60%;
-  left: 54%;
-  transform: translate(-70%, -50%);
-  display: flex;
-  justify-content: space-between;
-  width: 200px;
-  font-family: 'Exo', sans-serif;
-  cursor: pointer;
-  color: #0C1618;
-  font-size: 16px;
-  margin-right: 20px;
-}
-
-.Kategori {
-  position: absolute;
-  top: 60%;
-  left: 55%;
-  transform: translate(-10%, -50%);
-  display: flex;
-  justify-content: space-between;
-  width: 200px;
-  font-family: 'Exo', sans-serif;
-  cursor: pointer;
-  color: #0C1618;
-  font-size: 16px;
-}
-
-.login-text {
-  position: absolute;
-  top: 50%;
-  right: 40px;
-  transform: translateY(-50%);
-  cursor: pointer;
-}
-
-.login-text span {
-  color: #0C1618;
-  font-size: 16px;
-  margin-right: 20px;
-}
-
-.Beranda,
-.Kategori,
-.login-text {
+body {
     font-family: 'Exo', sans-serif;
-    cursor: pointer;
-    color: #0C1618;
-    font-size: 16px;
-    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+header {
+    font-family: 'Exo', sans-serif;
+    background-color: #004643;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Logo placeholder */
+#logoBox {
+    width: 180px;
+    height: 60px;
+    background-image: url('/img/logo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+nav {
+    display: flex;
+    gap: 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #D1AC00;
+    transform: scale(1.1);
+}
+
+.logo img {
+    height: 40px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
     margin-right: 20px;
 }
 
-.header-line {
-  position: absolute;
-  left: 0;
-  top: calc(100% + 40px);
-  width: 100%;
-  height: 2px;
-  background-color: #004643;
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s;
 }
 
-a {
-  text-decoration: none;
-  color: #0C1618;
-  font-weight: 600;
+nav ul li a:hover {
+    color: #ff0000;
 }
 
-a span {
-  font-family: 'Exo', sans-serif;
-  font-size: 16px;
-} 
-  
-.welcome-text {
-  position: absolute;
-  top: calc(100% + 70px);
-  left: 15%;
+.profile {
+    font-family: 'Exo', sans-serif;
+    color: white;
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-left: 10px;
+    cursor: pointer;
+    position: relative;
 }
 
-.welcome-text span {
-  font-family: 'Giga Sans', sans-serif;
-  font-size: 22px;
-  font-weight: 700;
-  color: #0C1618;
-}
-  
-.schedule-feature {
-  position: absolute;
-  top: calc(100% + 120px);
-  left: 190px;
-  width: calc(100%);
-  max-width: 980px;
-  height: 400px;
-  padding: 20px;
-  background-color: #FAF4D5;
-  border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  z-index: 1;
+.profile-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: white;
+    color: #333;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+    z-index: 1000;
 }
 
-.feature-title {
-  font-family: 'Giga Sans', sans-serif;
-  font-size: 22px;
-  font-weight: bold;
-  color: #0C1618;
-  margin-bottom: 10px;
+.profile-dropdown a {
+    display: block;
+    padding: 10px 20px;
+    color: #333;
+    text-decoration: none;
+    transition: background-color 0.3s;
 }
 
-.inner-boxes {
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: 30px;
+.profile-dropdown a:hover {
+    background-color: #f0f0f0;
 }
 
-.inner-box {
-  width: calc(48%);
-  height: 150px;
-  margin-right: 16px;
-  margin-bottom: 15px;
-  background-color: #FFFFFF;
-  border: 1px solid #CCCCCC;
-  border-radius: 5px;
-  position: relative;
+main {
+    padding: 20px;
 }
 
-.box-content {
-  position: relative;
-  padding: 10px;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
+.carousel {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.sport-info {
-  display: flex;
-  align-items: center;
+.carousel-slide {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
 }
 
-.sport-title {
-  font-weight: bold;
-  font-size: 16px;
-  margin-right: 10px;
-  margin-left: 10px;
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
 }
 
-.icon-description {
-  display: flex;
-  align-items: center;
-  margin-top: 5px;
+.carousel-slide.active {
+    display: block;
 }
 
-.icon {
-  margin-right: 50px;
-  font-size: 14px;
+.carousel-caption {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 0 0 10px 10px;
 }
 
-.icon i {
-  margin-top: 10px;
-  margin-left: 20px;
-  font-size: 78px;
+.carousel-caption h2 {
+    margin: 0;
+    font-size: 32px;
 }
 
-.description {
-  font-family: 'Giga Sans', sans-serif; /* Atur font menjadi Giga Sans */
-  flex-grow: 1;
-  margin-left: -20px; /* Sesuaikan nilai ini untuk menggeser ke kiri */
-  margin-top: 10px;
-  font-size: 14px; /* Ubah ukuran font deskripsi */
-  display: flex;
-  flex-direction: column; /* Menjadikan elemen-elemen child berbaris vertikal */
+.carousel-caption p {
+    font-size: 16px;
 }
 
-.description-row {
-  display: flex;
-  margin: 5px 0;
-  font-size: 16px;
+.watch-now {
+    background-color: #ff0000;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 3px;
+    transition: background-color 0.3s;
 }
 
-.description-label {
-  font-family: 'Giga Sans', sans-serif; /* Atur font menjadi Giga Sans */
-  font-weight: bold;
-  margin-right: -10px;
-  width: 80px; /* Sesuaikan lebar sesuai kebutuhan */
+.watch-now:hover {
+    background-color: #cc0000;
 }
 
-.description-value {
-  font-family: 'Giga Sans', sans-serif; /* Atur font menjadi Giga Sans */ 
-  flex-grow: 1;
+.carousel-controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
 }
 
-.additional-feature {
-  position: absolute;
-  top: calc(100% + 570px);
-  left: 190px;
-  width: calc(100% - 30px);
-  max-width: 900px;
-  padding: 20px;
-  background-color: #FFFFFF;
-  border-radius: 10px;
-  z-index: 1;
+.carousel-controls button {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+    transition: background-color 0.3s;
 }
 
-.kategori-title {
-  font-family: 'Giga Sans', sans-serif;
-  font-size: 22px;
-  font-weight: bold;
-  color: #0C1618;
-  margin-bottom: 10px;
-  margin-left: 40px;
+.carousel-controls button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
-.extra-boxes {
-  display: flex;
-  justify-content: flex-end; /* Geser extra-box ke kanan */
-  margin-top: 30px;
+.event-logos {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #333;
+    padding: 20px;
+    flex-wrap: wrap;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.extra-box {
-  width: calc(33.33% - 30px); /* Sesuaikan dengan jumlah extra-box dan gap */
-  height: 100px;
-  background-color: #FFFFFF;
-  border: 1px solid #CCCCCC;
-  border-radius: 5px;
-  display: flex; /* Menggunakan flexbox */
-  justify-content: center; /* Pusatkan konten secara horizontal */
-  align-items: center; /* Pusatkan konten secara vertikal */
-  text-align: center; /* Pusatkan teks secara horizontal */
-  position: relative;
-  z-index: 2;
-  margin-left: 10px; /* Tambahkan margin kiri untuk gap */ 
-  overflow: hidden; /* Atur overflow menjadi hidden */
+.event-logo {
+    margin: 10px;
+    transition: transform 0.3s;
 }
 
-.category {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: 'Exo', sans-serif;
+.event-logo img {
+    height: 40px;
 }
 
-.category span {
-  font-weight: 800;
-  font-size: 28px;
-  margin-left: 10px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+.event-logo:hover {
+    transform: scale(1.1);
 }
 
-.category i {
-  font-size: 64px; /* Atur ukuran ikon */
-  color: #333;
-  margin-right: 10px;
+.clips-section {
+    margin-top: 40px;
 }
 
-.category img {
-  width: 60px;
-  height: auto;
+.clips-section h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
 }
 
-.extra-box::before {
-  content: ''; /* Tambahkan konten pseudo-elemen */
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%; /* Gunakan lebar dan tinggi 100% */
-  height: 100%;
-  background-size: contain; /* Atur ukuran gambar agar sesuai */
-  background-repeat: no-repeat; /* Atur pengulangan gambar menjadi tidak ada */
-  background-position: center; /* Pusatkan gambar */
-  z-index: -1; /* Posisikan di belakang konten utama */
+.clips-carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
 }
 
-.extra-box:hover {
-  transform: scale(0.95);
+.clips-carousel-inner {
+    display: flex;
+    transition: transform 0.3s ease;
 }
 
-.extra-box[data-bg]::before {
-  background-image: var(--bg-url); /* Ubah properti background-image */
+.clip {
+    min-width: 300px;
+    margin-right: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.view-more {
-  text-align: right;
-  margin-top: 20px;
+.clip iframe {
+    width: 100%;
+    height: 200px;
+    border: none;
+    border-radius: 10px 10px 0 0;
 }
 
-.view-more a {
-  font-family: 'Exo', sans-serif;
-  font-size: 16px;
-  font-weight: bold;
-  color: #0C8BE7;
-  text-decoration: none;
+.clip-info {
+    padding: 10px;
+    background: white;
+    color: #333;
+    text-align: center;
 }
 
-.view-more a:hover {
-  text-decoration: underline;
+.clips-carousel-controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.clips-carousel-controls button {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+}
+
+.clips-carousel-controls button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
 }

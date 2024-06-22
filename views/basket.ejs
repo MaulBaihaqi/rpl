@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basket</title>
+    <link rel="icon" href= "/img/Logo.png" type="image/x-icon"/>
+    <link href="https://fonts.googleapis.com/css2?family=Exo:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style/basket.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="/img/logo.png" alt="Logo">
+        </div>
+        <nav>
+            <nav>
+                <a href="/homepage">Beranda</a>
+                <a href="/category">Kategori</a>
+                <a href="/schedulefut">Jadwal</a>
+                <a href="/logout">LogOut</a>
+            </nav>
+    </header>
+
+    <div class="container">
+        <form method="post" action="/add_basket_team" class="form" id="teamForm">
+            <h2>Add New Team</h2>
+            <input type="text" id="teamName" name="name" placeholder="Team Name" required><br>
+            <input type="submit" value="Add Team">
+        </form>
+
+
+        <form method="post" action="/add_basket_match" class="form" id="matchForm">
+            <h2>Add New Match</h2>
+            <input type="text" id="matchName" name="name" placeholder="Match Name" required><br>
+            <select id="teamASelect" name="team_a_name" required>
+                <option value="">Select Team A</option>
+                <% teams.forEach(team => { %>
+                    <option><%= team.name %></option> 
+                <% }); %>
+            </select>
+            <select id="teamBSelect" name="team_b_name" required>
+                <option value="">Select Team B</option>
+                <% teams.forEach(team => { %>
+                    <option><%= team.name %></option> 
+                <% }); %>
+            </select><br>
+            <input type="number" id="teamAScore" name="team_a_score" placeholder="Team A Score" min="0">
+            <input type="number" id="teamBScore" name="team_b_score" placeholder="Team B Score" min="0"><br>
+            <input type="submit" value="Add Match">
+        </form>
+
+        <form method="post" action="/add_basket_player" class="form" id="teamForm">
+            <h2>Add New Player</h2>
+            <input type="text" id="playerName" name="name" placeholder="Player Name" required><br>
+            <input type="text" id="playerPosition" name="position" placeholder="Position"><br>
+            <input type="text" id="points" name="points" placeholder="Points" min="0">
+            <input type="text" id="rebounds" name="rebounds" placeholder="Rebounds" min="0">
+            <input type="text" id="assists" name="assists" placeholder="Assists" min="0"><br>
+            <select id="playerTeamSelect" name="team_name" required>
+                <option value="">Select Team</option>
+                <% teams.forEach(team => { %>
+                    <option ><%= team.name %></option> 
+                <% }); %>
+            </select><br>
+            <input type="submit" value="Add Player">
+        </form>
+
+    </div>
+    <script src="/Projekan/basket.js"></script>
+</body>
+</html>

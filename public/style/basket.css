@@ -1,0 +1,145 @@
+body {
+    font-family: 'Exo', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+  }
+  
+  header {
+    background-color: #004643;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  #logoBox {
+    width: 180px;
+    height: 60px;
+    background-image: url('/img/logo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  
+
+  nav {
+    display: flex;
+    gap: 15px;
+  }
+  
+  nav a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  nav a:hover {
+    background-color: #D1AC00;
+    transform: scale(1.1);
+  }
+  
+  .logo img {
+    height: 40px;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav ul li {
+    margin-right: 20px;
+  }
+  
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s;
+  }
+  
+  nav ul li a:hover {
+    color: #ff0000;
+  }
+  
+  .profile {
+    font-family: 'Exo', sans-serif;
+    color: white;
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-left: 10px;
+    cursor: pointer;
+    position: relative;
+  }
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+}
+
+.form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+.form h2 {
+    color: #004643;
+}
+.form input[type="text"],
+.form input[type="number"],
+.form select,
+.form input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+.form input[type="submit"] {
+    background-color: #004643;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+.form input[type="submit"]:hover {
+    background-color: #002b29;
+}
+.match-list {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+.match-list h2 {
+    text-align: center;
+    color: #004643;
+}
+.match {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+.match:last-child {
+    border-bottom: none;
+}
+.match-name {
+    font-weight: bold;
+    color: #333;
+}
+.match-teams,
+.match-details {
+    color: #666;
+}

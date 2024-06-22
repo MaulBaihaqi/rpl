@@ -213,16 +213,6 @@ body, html {
     width: 450px;
 }
 
-.logo { /* Logo Styling */
-    width: 120px;
-    height: 50px;
-    margin: 0 auto 20px;  /* Center the logo and add spacing */
-    background-color: #D9D9D9; /* Placeholder for your logo */
-    border-radius: 10px;  
-}
-.logo img{
-    width: 100%;
-}
 
 
 /* Form Styling */

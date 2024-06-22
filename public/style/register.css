@@ -1,4 +1,4 @@
-/* General Styles */
+
 body, html {
     margin: 0;
     padding: 0;
@@ -6,7 +6,7 @@ body, html {
     font-family: "Giga Sans", sans-serif;
 }
 
-/* Shared Login/Register Page Styles */
+
 .login-page,
 .register-page {
     display: flex;
@@ -45,7 +45,7 @@ body, html {
     border-radius: 10px;  
 }
 
-/* Form Container Styling */
+
 .form-container h2 {
     margin-top: 0;
     font-size: 32px;
@@ -76,7 +76,6 @@ body, html {
     border-color: #007bff;
 }
 
-/* Button Styling (Shared) */
 .login-container button, 
 .register-container button {
     background: linear-gradient(135deg, #004643, #007bff);
@@ -98,7 +97,6 @@ body, html {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
 }
 
-/* Button Row Styling */
 .button-row {
     margin-top: 20px;
     display: flex;
@@ -113,7 +111,6 @@ body, html {
     margin: 0 5px;
 }
 
-/* Link Styling */
 .login,
 .register {
     font-family: "Giga Sans", sans-serif;

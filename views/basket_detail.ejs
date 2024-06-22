@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basketball Match Details</title>
+    <link rel="icon" href= "/img/Logo.png" type="image/x-icon"/>
+    <link href="https://fonts.googleapis.com/css2?family=Exo:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="/style/basket_detail.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="/img/logo.png" alt="Logo">
+        </div>
+        <nav>
+            <nav>
+                <a href="/homepage">Beranda</a>
+                <a href="/category">Kategori</a>
+                <a href="/schedulefut">Jadwal</a>
+                <a href="/logout">LogOut</a>
+            </nav>
+    </header>
+
+    <div class="container">
+        <h2 class="section-title">Detail Pertandingan Basket</h2>
+        <div class="teams" id="teamInfo">
+            <div class="team">
+                <h3><%= matches.team_a_name %></h3>
+                <p class="score"><%= matches.team_a_score %></p>
+                <button id="editTeam1Button" class="btn" onclick="openEditForm('<%= matches.team_a_name %>', '<%= matches.team_a_score %>')">Edit</button>
+            </div>
+            <div class="vs">VS</div>
+            <div class="team">
+                <h3><%= matches.team_b_name %></h3>
+                <p class="score"><%= matches.team_b_score %></p>
+                <button id="editTeam2Button" class="btn" onclick="openEditForm('<%= matches.team_b_name %>', '<%= matches.team_b_score %>')">Edit</button>
+            </div>
+        </div>
+        
+        <h2 class="section-title">Statistik Pemain</h2>
+        <h3 id="team1Name" class="section-title"><%= matches.team_a_name %></h3>
+        <table class="stats-table player-stats player-stats-table" id="team1Stats">
+            <tr>
+                <th>Nama</th>
+                <th>Posisi</th>
+                <th>Points</th>
+                <th>Rebounds</th>
+                <th>Assists</th>
+                <th>Aksi</th>
+            </tr>
+            <% for (let player of players) { %>
+                <% if(player.team_name === matches.team_a_name) { %>
+                    <tr>
+                        <td><%= player.name %></td>
+                        <td><%= player.position %></td>
+                        <td><%= player.points %></td>
+                        <td><%= player.rebounds %></td>
+                        <td><%= player.assists %></td>
+                        <td class="action-buttons">
+                            <button class="btn" onclick="editPlayer('<%= player.id %>', '<%= player.name %>', '<%= player.position %>', '<%= player.points %>', '<%= player.rebounds %>', '<%= player.assists %>')">Edit</button>
+                            <button class="btn" onclick="deletePlayer('<%= player.id %>')">Delete</button>
+                        </td>
+                    </tr>
+                <% } %>
+            <% } %>
+        </table>
+        
+        <h3 id="team2Name" class="section-title"><%= matches.team_b_name %></h3>
+        <table class="stats-table player-stats player-stats-table" id="team2Stats">
+            <tr>
+                <th>Nama</th>
+                <th>Posisi</th>
+                <th>Points</th>
+                <th>Rebounds</th>
+                <th>Assists</th>
+                <th>Aksi</th>
+            </tr>
+            <% for (let player of players) { %>
+                <% if(player.team_name === matches.team_b_name) { %>
+                    <tr>
+                        <td><%= player.name %></td>
+                        <td><%= player.position %></td>
+                        <td><%= player.points %></td>
+                        <td><%= player.rebounds %></td>
+                        <td><%= player.assists %></td>
+                        <td class="action-buttons">
+                            <button class="btn" onclick="editPlayer('<%= player.id %>', '<%= player.name %>', '<%= player.position %>', '<%= player.points %>', '<%= player.rebounds %>', '<%= player.assists %>')">Edit</button>
+                            <button class="btn" onclick="deletePlayer('<%= player.id %>')">Delete</button>
+                        </td>
+                    </tr>
+                <% } %>
+            <% } %>
+        </table>
+        
+
+        <div class="btn-container">
+        <a href="/basket">
+            <button id="addPlayerButton" class="btn">Add more Player</button>
+        </a>
+        </div>
+
+    </div>
+
+    <div id="editFormContainer" class="modal">
+        <form id="editForm" class="modal-content">
+            <h2>Edit Team</h2>
+            <label for="editTeamName">Nama Tim:</label>
+            <input type="text" id="editTeamName" required>
+            <label for="editTeamScore">Skor Tim:</label>
+            <input type="number" id="editTeamScore" required>
+            <button type="button" onclick="saveTeam()">Simpan</button>
+            <button type="button" onclick="closeEditForm()">Batal</button>
+        </form>
+    </div>
+
+    <div id="playerFormContainer" class="modal">
+        <form id="playerForm" class="modal-content">
+            <h2>Tambah/Edit Pemain</h2>
+            <label for="playerName">Nama Pemain:</label>
+            <input type="text" id="playerName" required>
+            <label for="playerPosition">Posisi:</label>
+            <input type="text" id="playerPosition" required>
+            <label for="playerPoints">Points:</label>
+            <input type="number" id="playerPoints" required>
+            <label for="playerRebounds">Rebounds:</label>
+            <input type="number" id="playerRebounds" required>
+            <label for="playerAssists">Assists:</label>
+            <input type="number" id="playerAssists" required>
+            <button type="button" onclick="savePlayer()">Simpan</button>
+            <button type="button" onclick="closePlayerForm()">Batal</button>
+        </form>
+    </div>
+
+    <script src="/Projekan/basket_detail.js">
+    </script>
+</body>
+</html>
